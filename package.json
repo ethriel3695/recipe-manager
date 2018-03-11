@@ -14,7 +14,7 @@
     "server": "nodemon --exec npm-run-all --parallel open:src --ignore client",
     "devServ": "nodemon --exec npm-run-all --parallel open:src lint:watch test:watch",
     "client": "npm run start --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build",
     "open:dist": "babel-node buildScripts/distServer.js",
     "open:src": "babel-node buildScripts/srcServer.js",
     "lint": "esw webpack.config.babel.*, src, buildScripts --color",
