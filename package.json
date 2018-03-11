@@ -28,9 +28,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
-    "style-loader": "^0.20.3",
-    "webpack-md5-hash": "0.0.6"
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
