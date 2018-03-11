@@ -6,9 +6,9 @@
     "/auth/google": {
       "target": "http://localhost:3030"
     },
-    "/api/*": { 
+    "/api/*": {
       "target": "http://localhost:3030",
-      "logLevel": "debug" 
+      "logLevel": "debug"
     }
   },
   "dependencies": {
