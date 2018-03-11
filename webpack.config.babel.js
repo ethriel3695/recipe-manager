@@ -79,7 +79,6 @@ var productionConfig = {
   devtool: 'cheap-module-source-map',
   plugins: [productionPlugin,
     new WebpackMd5Hash(),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin()
   ]
 };
