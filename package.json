@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "client": "npm run start --prefix client",
+    "heroku-postbuild": "next build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
