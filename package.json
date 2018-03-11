@@ -1,41 +1,95 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
-  "proxy": {
-    "/auth/google": {
-      "target": "https://boiling-shore-39277.herokuapp.com"
-    },
-    "/api/*": {
-      "target": "https://boiling-shore-39277.herokuapp.com",
-      "logLevel": "debug"
-    }
-  },
-  "dependencies": {
-    "axios": "^0.18.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "materialize-css": "^0.100.2",
-    "open": "0.0.5",
-    "prop-types": "^15.6.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+  "name": "recipe-manager",
+  "version": "1.0.0",
+  "description": "The client side code for my recipe management application",
+  "main": "index.js",
+  "engines": {
+    "node": "8.9.1",
+    "npm": "5.5.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "production": "babel-node server.js",
-    "heroku-postbuild": "npm run build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "babel-node buildScripts/srcServer.js",
+    "production": "babel-node buildScripts/distServer.js",
+    "server": "nodemon --exec npm-run-all --parallel open:src --ignore client",
+    "devServ": "nodemon --exec npm-run-all --parallel open:src lint:watch test:watch",
+    "client": "npm run start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "open:dist": "babel-node buildScripts/distServer.js",
+    "open:src": "babel-node buildScripts/srcServer.js",
+    "lint": "esw webpack.config.babel.*, src, buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "security-check": "nsp check",
+    "localtunnel": "lt --port 8080",
+    "share": "npm-run-all --parallel open:src localtunnel",
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node buildScripts/build.js",
+    "postbuild": "babel-node buildScripts/distServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethriel3695/recipe-manager.git"
+  },
+  "author": "Reuben Ellis",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "compression": "^1.7.1",
+    "concurrently": "^3.5.1",
+    "cookie-session": "^2.0.0-beta.3",
+    "css-loader": "^0.28.9",
+    "express": "^4.16.2",
+    "html-webpack-plugin": "^2.30.1",
+    "mocha": "^5.0.1",
+    "mongoose": "^5.0.6",
+    "npm-run-all": "^4.1.2",
+    "nsp": "^3.2.1",
+    "open": "^0.0.5",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^3.0.1",
+    "style-loader": "^0.20.2",
+    "webpack": "^4.1.1",
+    "webpack-dev-middleware": "^2.0.5",
+    "webpack-hot-middleware": "^2.19.1",
+    "webpack-md5-hash": "0.0.6"
+  },
+  "devDependencies": {
+    "chalk": "^2.3.1",
+    "cheerio": "^1.0.0-rc.2",
+    "cross-env": "^5.1.3",
+    "eslint": "^4.18.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-watch": "^3.1.3",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "ignore-styles": "^5.0.1",
+    "jsdom": "^11.6.2",
+    "localtunnel": "^1.8.3",
+    "nock": "^9.1.6",
+    "nodemon": "^1.15.0",
+    "open-uri": "^0.4.3",
+    "rimraf": "^2.6.2",
+    "sinon": "^4.3.0",
+    "supertest": "^3.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/ethriel3695/recipe-manager/issues"
+  },
+  "homepage": "https://github.com/ethriel3695/recipe-manager#readme"
 }
