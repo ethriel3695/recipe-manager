@@ -1,14 +1,12 @@
-import express from 'express';
-import path from 'path';
-import open from 'open';
-import compression from 'compression';
+const express = require('express');
+const open = require('open');
+const path = require('path');
 
 /* eslint-disable no-console */
 
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.use(compression());
 app.use(express.static('dist'));
 
 app.get('/', function (req, res) {
