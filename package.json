@@ -4,10 +4,10 @@
   "private": true,
   "proxy": {
     "/auth/google": {
-      "target": "http://localhost:3030"
+      "target": "https://boiling-shore-39277.herokuapp.com"
     },
     "/api/*": {
-      "target": "http://localhost:3030",
+      "target": "https://boiling-shore-39277.herokuapp.com",
       "logLevel": "debug"
     }
   },
