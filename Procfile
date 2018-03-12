@@ -1,1 +1,1 @@
-web: npm run production
+web: babel-node buildScripts/distServer.js

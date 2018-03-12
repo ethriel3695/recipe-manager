@@ -26,10 +26,10 @@ const productionPlugin = new webpack.DefinePlugin({
 });
 
 const base = {
-  entry: {
-    // 'webpack-hot-middleware/client?reload=true',
-    main: path.resolve(__dirname, 'src/index')
-  },
+  entry: [
+    'babel-polyfill',
+    PATHS.app
+  ],
   target: 'web',
   output: {
     path: PATHS.build,
@@ -38,7 +38,10 @@ const base = {
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' },
+      { test: /\.js|jsx$/, 
+        exclude: /node_modules/, 
+        use: 'babel-loader' 
+      },
       {
         test: /\.css$/,
         use: [
@@ -51,8 +54,11 @@ const base = {
               modules: true,
               localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
             }
-          }]
-      }
+          }
+        ]
+      },
+      { test: /\.(eot|svg|ttf|woff|woff2)$/, 
+        use: 'file-loader'}
     ]
   },
   resolve: {
@@ -77,7 +83,8 @@ const developmentConfig = {
 
 var productionConfig = {
   devtool: 'cheap-module-source-map',
-  plugins: [productionPlugin,
+  plugins: [HTMLWebpackPluginConfig,
+    productionPlugin,
     new WebpackMd5Hash()
   ]
 };

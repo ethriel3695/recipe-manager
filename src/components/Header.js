@@ -11,11 +11,11 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return <li><a href='/auth/google'>{`Login With Google`}</a></li>;
+        return <li><a href={`https://boiling-shore-39277.herokuapp.com/auth/google`}>{`Login With Google`}</a></li>;
       default:
         return (
           <li>
-            <a href='/api/logout'>{`Logout`}</a>
+            <a href={`https://boiling-shore-39277.herokuapp.com/api/logout`}>{`Logout`}</a>
           </li>
         );
     }
