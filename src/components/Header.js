@@ -7,19 +7,20 @@ class Header extends Component {
 
   renderContent() {
     // eslint-disable-next-line
+    console.log(this.props.auth);
     switch (this.props.auth) {
       case null:
         return;
       case false:
         return ( 
           <li>
-            <a href='https://boiling-shore-39277.herokuapp.com/auth/google'>{`Login With Google`}</a>
+            <a href={`${process.env.API_HOST}/auth/google`}>{`Login With Google`}</a>
           </li>
         );
       default:
         return (
           <li>
-            <a href='https://boiling-shore-39277.herokuapp.com/api/logout'>{`Logout`}</a>
+            <a href={`${process.env.API_HOST}/api/logout`}>{`Logout`}</a>
           </li>
         );
     }

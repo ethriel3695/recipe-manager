@@ -11,7 +11,7 @@
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "babel-node buildScripts/srcServer.js",
     "server": "nodemon --exec npm-run-all --parallel open:src --ignore client",
-    "devServ": "nodemon --exec npm-run-all --parallel open:src lint:watch test:watch",
+    "devServ": "nodemon --exec npm-run-all --parallel open:dist lint:watch test:watch",
     "client": "npm run start --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build",
     "open:dist": "babel-node buildScripts/distServer.js",
