@@ -21,7 +21,8 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 
 const productionPlugin = new webpack.DefinePlugin({
   'process.env': {
-    NODE_ENV: JSON.stringify('production')
+    NODE_ENV: JSON.stringify('production'),
+    API_HOST: JSON.stringify('https://boiling-shore-39277.herokuapp.com')
   }
 });
 
