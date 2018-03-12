@@ -8,6 +8,8 @@ import compression from 'compression';
 const port = process.env.PORT || 3000;
 const app = express();
 
+require('dotenv').config();
+
 app.use(compression());
 app.use(express.static('dist'));
 
