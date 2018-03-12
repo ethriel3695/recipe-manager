@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -9,7 +9,7 @@ import Landing from './Landing';
 const Dashboard = () => <h2>Dashboard</h2>;
 const RecipeNew = () => <h2>RecipeNew</h2>;
 
-class App extends Component {
+class App extends React.Component {
   componentDidMount() {
     this.props.fetchUser();
   }
