@@ -3,6 +3,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+const API_URL = process.env.API_HOST;
+
 class Header extends React.Component {
 
   renderContent() {
@@ -14,13 +16,13 @@ class Header extends React.Component {
       case false:
         return ( 
           <li>
-            <a href={`${process.env.API_HOST}/auth/google`}>{`Login With Google`}</a>
+            <a href={`${API_URL}/auth/google`}>{`Login With Google`}</a>
           </li>
         );
       default:
         return (
           <li>
-            <a href={`${process.env.API_HOST}/api/logout`}>{`Logout`}</a>
+            <a href={`${API_URL}/api/logout`}>{`Logout`}</a>
           </li>
         );
     }
