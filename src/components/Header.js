@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const API_URL = process.env.API_HOST;
+const API_URL = encodeURI('https://boiling-shore-39277.herokuapp.com');
 
 class Header extends React.Component {
 
