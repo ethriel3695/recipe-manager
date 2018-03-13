@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 
 const LAUNCH_COMMAND = process.env.npm_lifecycle_event;
-console.l0g(LAUNCH_COMMAND);
+console.log(LAUNCH_COMMAND);
 
 const isProduction = LAUNCH_COMMAND === 'production';
 process.env.BABEL_ENV = LAUNCH_COMMAND;
