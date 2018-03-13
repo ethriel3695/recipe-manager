@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 
 const LAUNCH_COMMAND = process.env.npm_lifecycle_event;
+console.l0g(LAUNCH_COMMAND);
 
 const isProduction = LAUNCH_COMMAND === 'production';
 process.env.BABEL_ENV = LAUNCH_COMMAND;
@@ -22,7 +23,7 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 const productionPlugin = new webpack.DefinePlugin({
   'process.env': {
     NODE_ENV: JSON.stringify('production'),
-    API_HOST: JSON.stringify('https://boiling-shore-39277.herokuapp.com')
+    API_HOST: encodeURI('https://boiling-shore-39277.herokuapp.com')
   }
 });
 
