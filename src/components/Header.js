@@ -39,7 +39,7 @@ class Header extends React.Component {
             className='left brand-logo'>
             {`Recipe Manager`}
           </Link>
-          <ul className='right'>
+          <ul className='right-align'>
             {this.renderContent()}
           </ul>
         </div>
