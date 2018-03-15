@@ -36,10 +36,10 @@ class Header extends React.Component {
           <Link
           // eslint-disable-next-line
             to={this.props.auth ? '/recipes' : '/'}
-            className='left brand-logo'>
+            className='brand-logo'>
             {`Recipe Manager`}
           </Link>
-          <ul className='right-align'>
+          <ul className='right'>
             {this.renderContent()}
           </ul>
         </div>
