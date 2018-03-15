@@ -9,7 +9,6 @@ class Header extends React.Component {
 
   renderContent() {
     // eslint-disable-next-line
-    console.log(this.props.auth);
     switch (this.props.auth) {
       case null:
         return;
@@ -29,6 +28,8 @@ class Header extends React.Component {
   }
 
   render() {
+    // eslint-disable-next-line
+    console.log(this.props.auth);
     return (
       <nav>
         <div className='nav-wrapper'>
@@ -48,6 +49,8 @@ class Header extends React.Component {
 }
 
 function mapStateToProps({ auth }) {
+  // eslint-disable-next-line
+  console.log(auth);
   return { auth };
 }
 
