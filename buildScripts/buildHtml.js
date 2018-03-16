@@ -10,7 +10,7 @@ fs.readFile('./src/index.html', 'utf8', (err, markup) => {
 
   const $ = cheerio.load(markup);
 
-  // $('head').prepend('<Link rel="stylesheet" type="text/css" href="materialize-css/dist/css/materialize.min.css">');
+  $('head').prepend('<Link rel="stylesheet" href="styles.css">');
 
   fs.writeFile('./dist/index.html', $.html(), 'utf8', function (err) {
     if (err) {
