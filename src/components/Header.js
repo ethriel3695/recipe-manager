@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const API_URL = encodeURI('https://boiling-shore-39277.herokuapp.com');
+// const API_URL = encodeURI('http://localhost:3030');
 
 class Header extends React.Component {
 

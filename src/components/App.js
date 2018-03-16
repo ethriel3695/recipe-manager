@@ -20,7 +20,7 @@ class App extends React.Component {
             <div>
               <Header />
               <Route exact={true} path ='/' component={Landing} />
-              <Route exact={true} path ='/recipes' component={Dashboard} />
+              <Route path ='/recipes' component={Dashboard} />
               <Route path ='/recipes/new' component={RecipeNew} />
             </div>
           </BrowserRouter>

@@ -6,7 +6,7 @@ import config from '../webpack.config.babel';
 import bodyParser from 'body-parser';
 
 /* eslint-disable no-console */
-const port = process.env.PORT || 3030;
+const port = process.env.PORT || 3000;
 const app = express();
 
 const compiler = webpack(config);
