@@ -1,11 +1,177 @@
 body {
-    margin: 0;
     padding: 0;
     font-family: sans-serif;
-  }
+    background-size: cover;
+    /*background-color: #D7D7D5;*/
+    background-color: #e7e7e3;
+    margin: 0;
+}
   
-  ul {
+ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
+}
+
+h3 {
+    margin-top: 2rem;
+    padding: 0 0 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.loginFormContainer {
+    width: 320px;
+    height: 420px;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 grey, 0 6px 20px 0 grey;
+    background: #000;
+    opacity: .8;
+    filter: alpha(opacity=60);
+    color: #fff;
+}
+
+.socmedBtn {
+    padding: 7px;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px; 
+}
+
+.socmedBtnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socmedBtn:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
+.socmedBtnContainer > a {
+    text-decoration: none;
+}
+
+/* .wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer {
+    background-color: #ff0a27;
+    height: 60px;
+} */
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.sidebar2 {
+    grid-area: sidebar2;
+}
+
+.content {
+    grid-area: content;
+}
+
+.header {
+    grid-area: header;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.wrapper {
+    background-color: #fff;
+    color: #444;
+}
+
+.wrapper {
+display: grid;
+grid-gap: 1em;
+grid-template-areas:
+ "header"
+ "sidebar"
+ "content"
+ "sidebar2"
+ "footer"
+}
+
+@media only screen and (min-width: 500px)  {
+.wrapper {
+
+    grid-template-columns: 20% auto;
+    grid-template-areas:
+"header   header"
+    "sidebar  content"
+    "sidebar2 sidebar2"
+    "footer   footer";
+}
+}
+
+@media only screen and (min-width: 600px)   {
+    .wrapper {
+  grid-gap: 20px;
+        grid-template-columns: 120px auto 120px;
+        grid-template-areas:
+  "header  header  header"
+        "sidebar content sidebar2"
+        "footer  footer  footer";
+        max-width: 600px;
+    }
+}
+
+.box {
+background-color: #ff0a27;
+color: #fff;
+border-radius: 5px;
+padding: 10px;
+font-size: 150%; 
+}
+
+.header,
+.footer {
+background-color: #ff0a27;
+}
+
+.sidebar2 {
+background-color: #ccc;
+color: #444;
+}
+
+/* .header {
+    grid-area: header;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-areas:
+     "header"
   }
+
+  .box {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 150%; 
+  }
+
+  .header {
+  background-color: #999;
+} */

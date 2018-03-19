@@ -11,40 +11,42 @@ class Header extends React.Component {
 
   renderContent () {
     // eslint-disable-next-line
-    switch (this.props.auth) {
-      case null:
-        return;
-      case false:
-        return ( 
-          <li>
-            <a href={`${API_URL}/auth/google`}>{'Login With Google'}</a>
-          </li>
-        );
-      default:
-        return (
-          <li>
-            <a href={`${API_URL}/api/logout`}>{'Logout'}</a>
-          </li>
-        );
-    }
-  };
+    // switch (this.props.auth) {
+    //   case null:
+    //     return;
+    //   case false:
+    //     return ( 
+    //       <li>
+    //         <a href={`${API_URL}/auth/google`}>{'Login With Google'}</a>
+    //       </li>
+    //     );
+    //   default:
+    //     return (
+    //       <li>
+    //         <a href={`${API_URL}/api/logout`}>{'Logout'}</a>
+    //       </li>
+    //     );
+    // }
+    // eslint-disable-next-line
+  }
 
   render() {
     // eslint-disable-next-line
     console.log(this.props.auth);
     return (
-      <nav>
-        <div>
+        <div className={[styles.box, styles.header]}>
           <Link
           // eslint-disable-next-line
             to={this.props.auth ? '/recipes' : '/'}>
             {'Recipe Manager'}
           </Link>
           <ul>
-            {this.renderContent()}
+            {/*this.renderContent()*/}
+            <li key='2'>
+              <a href={`${API_URL}/api/logout`}>{'Logout'}</a>
+            </li>
           </ul>
         </div>
-      </nav>
     );
   }
 }
